@@ -7,11 +7,13 @@ namespace Consumption
     {
         private List<ConsumerHolder> m_consumers;
         private List<IResource> m_resources;
+        private Point m_worldDimensions;
 
-        public World()
+        public World(Point worldDimensions)
         {
             m_consumers = new List<ConsumerHolder>();
             m_resources = new List<IResource>();
+            m_worldDimensions = worldDimensions;
         }
 
         public void AddConsumer(IConsumer c, Point p)
@@ -34,15 +36,20 @@ namespace Consumption
             return m_resources;
         }
 
+        public Point Dimensions
+        {
+            get { return m_worldDimensions; }
+        }
+
         public void Render(Graphics gfx)
         {
             gfx.Clear(Form1.DefaultBackColor);
 
             Pen myPen = new Pen(Color.RoyalBlue, 2);
             Rectangle rect = new Rectangle(0, 0, 50, 50);
-            for (int x = 0; x < 10; x++)
+            for (int x = 0; x < m_worldDimensions.X; x++)
             {
-                for (int y = 0; y < 10; y++)
+                for (int y = 0; y < m_worldDimensions.Y; y++)
                 {
                     gfx.DrawRectangle(myPen, rect);
                     rect.Offset(0, 50);

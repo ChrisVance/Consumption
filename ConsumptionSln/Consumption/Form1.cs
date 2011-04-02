@@ -12,11 +12,14 @@ namespace Consumption
         Graphics graphicsObj;
         Timer updateTimer;
 
+        private const int WORLD_WIDTH = 10;
+        private const int WORLD_HEIGHT = 10;
+
         public Form1()
         {
             InitializeComponent();
             graphicsObj = this.CreateGraphics();
-            world = new World();
+            world = new World(new Point(WORLD_WIDTH, WORLD_HEIGHT));
         }
 
         private void btnCreateWorld_Click(object sender, EventArgs e)

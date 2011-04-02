@@ -13,7 +13,7 @@ namespace Consumption
         {
             this.consumer = c;
             this.position = p;
-            this.strength = 10;
+            this.strength = 10; // Initial strength
         }
 
         public Point GetPosition()
