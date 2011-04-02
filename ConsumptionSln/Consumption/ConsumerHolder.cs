@@ -28,8 +28,10 @@ namespace Consumption
         }
 
         // @TODO: This function belongs in the framework, not something so close to the consumer.  Move it.
-        public void UpdatePosition(String direction)
+        public void UpdatePosition(World w)
         {
+            String direction = consumer.ExecuteTurn(w);
+
             switch (direction.ToUpper())
             {
                 case Direction.North:

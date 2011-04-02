@@ -89,7 +89,7 @@ namespace Consumption
             {
                 try
                 {
-                    ch.UpdatePosition(ch.GetConsumer().ExecuteTurn(world));
+                    ch.UpdatePosition(world);
                 }
                 catch (InvalidPositionUpdateException)
                 {
