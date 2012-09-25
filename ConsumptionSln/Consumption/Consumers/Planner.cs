@@ -83,6 +83,11 @@ namespace Consumption.Consumers
             return output;
         }
 
+        private void TestFunction()
+        {
+            string foo = "";
+        }
+
         /// <summary>
         /// Return the first unconsumed resource found, or throw exception if no unconsumed resources exist.
         /// </summary>
